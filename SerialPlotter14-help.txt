@@ -1,0 +1,345 @@
+Program SerialPlotter - readme/help file
+== = = = = = = = = = = = = = = = = = = = = =
+
+actual version 14
+= = = = = = = = =
+Date of last finalising : 2026-07-12
+
+Upgrade :
+=========
+This uprade includes the separation of two functions of the previous program
+SerialPlotter12 on two parts, on the part of plotter for BPM only 
+and on the part of osciloscope, what I will reprogramm soon.
+So I am working on the program SerialOsciloscope, too.
+
+
+Preface :
+=========
+This readme/help is for program SerialPlotter - version 14 .
+
+I have created this program for serial devices what can communicate 
+via USB-RS232 like Arduino etc. 
+coupled with ECG or BPM sensores like AD9232, HW-487 or HW-827 etc.
+
+Producted data are in format .txt, .tab or .bpm files 
+and they are only for your personal information purpose 
+and they cannot be taken as medical results in any case.
+
+I have inform and public this readme/help and next files include .exe file 
+(packed in .zip with all folders etc.) 
+about actual version of this program on Github.
+
+Program was created in Delphi XE Starter 
+and it is working under operation system Windows.
+
+Program was created by Pavel Oupicky, rentier and home worker.
+
+Program is distributed by author as freeware for end users .
+   
+Author takes no liability towards of any use of his program.
+
+At 10.07. 2026 					Pavel Oupicky
+
+Contact  on author : pavel.oupicky@seznam.cz
+
+Default known problems in my programs  :
+= = = = = = = = = = = = = = = = = = = = =
+- this program is the compilation of many of previous programs created by author,
+- so some functions of his programs are inserted but are in actual version not ready for use.
+- Window OS can open many of windows, but when my programs are running, 
+  it is not impossible use OS Windows close, mini- or maximalization of ones, 
+  as the OS Windows and Deplphi XE Starter program cannot right open or closed them,
+  so if my programs are running, you do not use them ones,
+  or runned program and data will be lost.
+- Delphi XE Starter can product  graphs  format .bmp only about 2 MB 
+  and you must change them then to another format self.
+
+Basic description of program :
+= = = = = = = = = = = = = = = = 
+
+Communication:
+= = = = = = = =
+Program was created for devices what can communicate with PC OS protocol RS232,
+so for communication between personal computers
+with connectors RS232 or USB converters to RS232
+and devices like microcomputers Arduinos or Espressif 
+and their BPM or ECG modulesfor example.
+
+Home (Main) page of program:
+= = = = = = = = = = = = = = =
+On the Main (Home) window are buttons for calling next functions of this program.
+
+
+There is listbox with pre-defined files with parameters for your next measurig
+and you can choose the one from this listbox.
+
+There are in this file parameters for next measuring 
+and these must be pre-set in the regular form what includes
+name of program and version etc. .
+This right form is controlled and errors are reported.
+
+Description of basic buttons on home page in upper line:
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+About
+- basic description of program
+
+Memo
+- memory for notes saved on PC in the root folder
+
+Graphs
+- list of pre-defined parameters  for graphs
+
+Checkbox .
+ - if you will set it on, you can see the previous recorded serial data 
+   from your harddisc without a serial device must be connected.
+
+Data serial
+- read recorded data  measured by serial devices with  ECG or BPM sensores etc.
+  saved on harddisc in Data folder in .txt format
+
+Help
+-  reads this readme/help file and or similar txt files
+
+Hex counts
+- some transfers between bits, bytes and hexbytes
+  rest from my previous programs
+
+
+Description of basic buttons on home page in bottom line:
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Parameters
+- primary readed basic parameters for measurements, data, graph etc.
+
+Com
+- parameters for communication via com ports and their timings
+
+Device Set
+- basic set of  communication parameters for osc and measuring
+ 
+Measure
+- start for measurement process
+
+Menu
+- list of files from previous measurement for next transfer to tabs or graphs
+  when there are a data from actual or previous  measuremet, it is possible to see them 
+  or get and save them into tables or graphs
+
+Serial Test
+- call and read data from serial devices
+- basic test of communication between PC and serial devices like Arduino etc.
+
+End
+- end of program
+
+Example of initial file (.ini)
+= = = = = = = = = = = = = = = 
+
+Purpose: 
+- when program is starting, it call this .ini file at first
+
+SerialPlotter/14/ini
+Initial file for program SerialPlotter14
+10.07.2026/17:54:11
+User: free
+Path:Par
+File:Bpm-Arduino-Nano+HW-Com3-9600-example.par
+end
+
+- if you choose your file with parameters, you can save
+  this file as your .ini by click on button Save Init
+
+
+Parameters for tests and measurement (.par file):
+= = = = = = = = = = = = = = = = = = = = = = = = =
+Short description:
+- basic and driver parameters must be set before the programm will started
+- basic parameters must be set in file with extension .par in Par folder
+- driver (port - com) parameters must be set in file with extension .com in Com folder
+- parameters for graphs are in the file with extension .grp in  Grp folder
+- help  file name for program must be set in file with extension .txt  in the Help folder
+- task parameters are set direct in .par file
+
+Example of .par file
+= = = = = = = = = = =
+SerialPlotter14/params
+Measurement BPM with Arduino Nano and sensor HW-487
+Example of some basic parameters
+Date:2026-06-20*12:22
+Device:Arduino-Nano-BPM-HW,USB-RS232
+Protocol:BPM/Arduino Nano+HW-487
+Com:DataSerial-Arduino-Ploter-Com3-9600-example.com
+Tasks:3
+1/Patient-1-test,BPM-HW-487,a.u.,0,Measuring of Bpm
+2/Patient-2-test,BPM-HW-487,a.u.,0,Mereni Bpm
+3/Patient-3-test,BPM-HW-487,a.u.,0,Mereni Bpm
+Measured interval:0
+Data:Data
+Help:Help\SerialPlotter14-help.txt
+Graph-par:Grp\Grf-DataSerialPloter11-basic-en.grp
+end
+
+Notes:
+Protocol:BPM (in lower case bpm) will set as basic protocol parameter in all new recorded data files
+
+Data:Data is name of folder for all saved data include tabs and graphs
+
+Measured interval:0 
+ - is the rest from my previos programs and here is set to zero already 
+
+Example of file for com port (.com file):
+= = = = = = = = = = = = = = = = = = = = = 
+DataSerial/10/com
+Parameters for communication with Arduinos and Esp via port Com
+04.06.2026*13:47:45
+Port:Com,3,9600,8,1,0
+Timing:Timer=10,Sleep=10,Wait=300,Timeout=100
+end
+
+Note:
+- Port parameters must pass to internal set given by OS Windows (in Administrator com devices)!!
+- this example : Com3, baud rate 9600, 8 bits, 1 stop bit, no parity bit
+- Timing : it defines internal set parameters for communication between PC and serial devices
+
+Example of commands for tasks in .par file:
+= = = = = = = = = = = = = = = = = = = = = =
+
+Tasks:3 = number of tasks
+1/Patient-1-test,BPM-HW-487,a.u.,0,Measuring of  Bpm
+  Patient-1-test, = name of first patient tested
+  BPM-HW-487, = name of used methode and device
+  a.u., = arbitrary unit for graphs
+  0, = nr of decimal points in numbers = all zero for BPM etc.
+  Measuring of Bpm = note for measuring etc.
+2/Patient-2-test,BPM-HW-487,a.u.,0,Mereni Bpm
+3/Patient-3-test,BPM-HW-487,a.u.,0,Mereni Bpm
+
+Example of file for graphs (.grp file):
+= = = = = = = = = = = = = = = = = = = = = 
+
+SerialPlotter11/parameters/graphs
+Graph:SerialPlotter10 - test
+10.6.2026/21:25:21
+0*1*5*min*Axe of time for graph
+0*1*5*2*min*Axe of time for measuring
+0*50*250*a.u.*Axe of intensity for graph
+0*50*250*a.u.*Axe of intensity for measuring - basic
+0*10*50*a.u.*Axe of intensity for measuring - user
+1*1*.point for data on x and y
+1*0*rastr x and rastr y , 0 = no rastr
+Color of line*type of line*width of line from 0 to 8 works
+clBlue*psSolid*3
+clGreen*psSolid*2
+clRed*psSolid*1
+clBlack*psDot*0
+clLima*psDash*2
+clFuchsia*psDashDot*1
+clAqua*psDashDotDot*2
+clPurple*psSolid*0
+end
+
+Basic RS232 commands:
+= = = = = = = = = = =
+This commans are readable in program SerialPlotter version 10 and 11 .
+Command	Answer
+- - - - - - - -
+A	*A,400,#,CRLF   number is readed analog data example
+B	*B,399,#,CRLF	Cr is carriage return, LF is Line Feed
+C	*,401,#,CRLF	CRLF are marks from RS232 protocol
+D	398CRLF		simply data for Arduino IDE plotter for example	
+E20	*P,20,400,500,100,#,CRLF => returned next parameters	
+	20, data time step in mikroseconds
+	400, off-line readed data with osciloscope
+	500, max - " -
+	100, offset for readed data (usually zero)
+F	=> read all transfer detail comments from Arduino (for tests)
+G	=> test of yellow LED diode installed by Arduino (optionally)
+H	=> test of red RED diode installed by Arduino (optionally)
+J	=> return analog input (A0 to A7) 
+          and if data are normal (0) or invered (1)
+I	*I,nr,#, CRLF => test of aktual connected device nr
+K1	*K,1,#,CRLF example => 1 is slave number in the ESP-NOW master-slaves system
+(K1	*K,0,#,CRLF example => zero answer inform that this slave number 1 is off)
+L300	*P,20,300,500,100,#,CRLF => off-line readed data with osciloscope
+M	*M,20,300,6000,100,#,CRLF => off-line read data to internal memory, 6000 is estimated time	
+N	*N,20,300,6000,100,300 times of data on,#,CRLF = read 300 data from internal slave device memory
+O10	*P,20,300,500,10,#,CRLF => change in offset for data
+P	*P,20,300,500,10,#,CRLF => read parameters
+Q	= stop of reading details after commands
+R	*R,20,300,time,10,#,CRLF => is time of previous data measuring in microseconds
+S	*S,20,300,time,10,#,CRLF => stop of reading B,C,D data in cycle
+T	*T,dataWaitTime,#,CRLF => wait time for ESP
+U	*U,InverseDat,#,CRLF => 0 = data normal, 1 = data are in device inverted
+V	*V,dataPin,#,CRLF => analog input pin can be 0 to 7
+
+Note:
+After commands B,C and D are data sended in cycle till S command is received
+
+All this commands can product Arduino with sensores
+with my sketch BPM_senzor_HW_487_en_5.ino
+
+These commands are the same for my ESP-NOW system Master - Quick Slaves (M-QS)
+(later re-programmed in SerialOsciloscope uprade)
+
+Simply manual how to use SerialPlotter14
+= = = = = = = = = = = = = = = = = = = = =
+
+Main(home) window
+- - - - - - - - -
+- after main(home) window is on and OK, push Device Set Button
+- or Com Button, if you are not sure if your com port is set well
+- Open Port window will be shown
+
+Open Com port window
+- - - - - -
+- push Open button
+- if handle of predefined com port will set on, push Purge button and purge this comm port
+- choose Device Set  button and Device Set  window will be shown
+
+Device Set window
+- - - - - - - - -
+- choose Q command from Call combobox an push Call button
+- if answer will be OK and green trigger light will be on, you can continue with next parameters
+- for example choose G Y Led from Call combobox and push Call button
+- yellow led on your device (if is installed) will light on
+- choose your input device from Devices combobox
+- choose I command from Commands combobox
+- push Set button and wait  for answer in Answer or Result field
+- if your asked device is on, this one will be confirmed
+- choose K command from Serial Commands combobox
+- push Set button and wait  for answer in Answer or Result field
+- when this answer will repeat your slave device number, this one is on-line
+- if your choosed device is on, it will be confirmed, else zero will be in answer field
+- push Read Par button to read pre-set parameters for Measure windows
+- push Data button to read data from your device via command A to be sure your device measured OK 
+
+Measure window
+- - - - - - - -
+- choose your task from listbox with tasks
+- choose plotter type from plotter combobox A or B (more quick when data reading)
+- I prefer and test onpz B command for plotter, A or C,D I did not use or test, no time, I am sorry
+- if you need record of data, cross Record checkbox, New file button will be wisible
+- occasionally write note of you to Note field
+- press New file button to set the header of this new file what will be used for next data registration
+- press Graph and  Graph window will be shown
+
+Grapf Form window
+- - - - - - - - - 
+(Note - Grapf Form is window for direct measurig, Graph Image is for data seeing after measuring)
+- set in Radiobutton Time axe for the time graph axe shift 
+  after this time will be over the end of time range
+- see and follow your measuring data, then press Stop button
+- after all measuring ends, press Task button
+- confirm if you want to save your data or on your hard disc
+  or into databox onlz for the next analysation in tabs or graphs.
+- press Menu button and Menu window will be shown
+
+Menu window
+- - - - - -
+- clik on the column with data
+- choose Tab Par or Graph Par
+- set parameters for table or graph
+- click on the Table or Graph image buttons
+
+= = = = End of Help file = = = =
