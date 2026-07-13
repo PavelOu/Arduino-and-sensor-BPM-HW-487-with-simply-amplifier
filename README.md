@@ -16,4 +16,4 @@ etc. in pdf main file
 Note: Results from measuring BPM with sensor HW-487 and Arduino Nano via program SerialPlotter12.exe are only for personal use and they are not a medical documents.
 
 Originaly written 12.6.2026						by PavelOu
-Upraded 3.7.2026                 bz Pavel Ou
+Upraded 3.7.2026                 by Pavel Ou
